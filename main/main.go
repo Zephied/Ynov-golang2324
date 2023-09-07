@@ -1,7 +1,12 @@
 package main
 
-import "piscine"
+import (
+	"fmt"
+	"piscine"
+)
 
 func main() {
-	piscine.PrintStr("Hello World!")
+	fmt.Println(piscine.Compare("Hello!", "Hello!"))
+	fmt.Println(piscine.Compare("Salut!", "lut!"))
+	fmt.Println(piscine.Compare("Ola!", "Ol"))
 }
