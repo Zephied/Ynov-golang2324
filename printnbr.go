@@ -6,7 +6,7 @@ func PrintNbr(n int) {
 	tab := make([]int, 0)
 	i := 0
 	if n == 0 {
-		z01.PrintRune(rune(n))
+		z01.PrintRune(rune(n + '0'))
 	} else {
 		if n < i {
 			z01.PrintRune('-')
