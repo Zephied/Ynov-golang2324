@@ -18,11 +18,15 @@ func Compare(a, b string) int {
 		}
 	}
 	for range a {
-		i := 0
-		if a[i] == b[i] {
-			i++
+		t := 0
+		if a[t] == b[t] {
+			t++
 		} else {
-			return (-1)
+			if t < 2 {
+				return (-1)
+			} else {
+				return (1)
+			}
 		}
 	}
 	return (0)
