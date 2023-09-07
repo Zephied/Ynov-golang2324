@@ -17,5 +17,13 @@ func Compare(a, b string) int {
 			return (1)
 		}
 	}
+	for range a {
+		i := 0
+		if a[i] == b[i] {
+			i++
+		} else {
+			return (-1)
+		}
+	}
 	return (0)
 }
