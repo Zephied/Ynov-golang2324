@@ -1,33 +1,12 @@
 package piscine
 
 func Compare(a, b string) int {
-	i := 0
-	y := 0
-	for range a {
-		i++
+	if a == b {
+		return (0)
 	}
-	for range b {
-		y++
+	if a < b {
+		return (-1)
+	} else {
+		return (1)
 	}
-	if i != y {
-		z := 0
-		if a[z] != b[z] {
-			return (-1)
-		} else {
-			return (1)
-		}
-	}
-	for range a {
-		t := 0
-		if a[t] == b[t] {
-			t++
-		} else {
-			if t < 2 {
-				return (-1)
-			} else {
-				return (1)
-			}
-		}
-	}
-	return (0)
 }
