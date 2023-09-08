@@ -5,6 +5,11 @@ func ToLower(s string) string {
 	r := ""
 	for range s {
 		if s[i] >= 'A' && s[i] <= 'Z' {
-			r = string(s[i] + 32)
+			r += string(s[i] + 32)
+		} else {
+			r += string(s[i])
+		}
+		i++
 	}
+	return (r)
 }
