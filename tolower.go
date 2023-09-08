@@ -1,7 +1,7 @@
 package piscine
 
 func ToLower(s string) string {
-	i := '0'
+	i := 0
 	r := ""
 	for range s {
 		if s[i] >= 'A' && s[i] <= 'Z' {
