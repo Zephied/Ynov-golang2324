@@ -1,7 +1,10 @@
 package main
 
-import "piscine"
+import (
+	"fmt"
+	"piscine"
+)
 
 func main() {
-	piscine.PrintComb2()
+	fmt.Println(piscine.ToLower("Hello! How are you?"))
 }
