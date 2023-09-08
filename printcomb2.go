@@ -11,7 +11,7 @@ func PrintComb2() {
 			for z <= '9' {
 				i := '0'
 				for i <= '9' {
-					if y < i {
+					if y < i || z != 0 {
 						z01.PrintRune(rune(x))
 						z01.PrintRune(rune(y))
 						z01.PrintRune(rune(' '))
