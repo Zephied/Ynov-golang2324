@@ -7,9 +7,9 @@ func Concat(str1 string, str2 string) string {
 		r += string(str1[i])
 		i++
 	}
-	i = 0
+	j := 0
 	for range str2 {
-		r += string(str2[i])
+		r += string(str2[j])
 	}
 	return (r)
 }
