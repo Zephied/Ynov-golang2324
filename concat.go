@@ -10,6 +10,7 @@ func Concat(str1 string, str2 string) string {
 	j := 0
 	for range str2 {
 		r += string(str2[j])
+		j++
 	}
 	return (r)
 }
