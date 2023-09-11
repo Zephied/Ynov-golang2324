@@ -11,21 +11,22 @@ func Capitalize(s string) string {
 			if i == 0 {
 				r += string(s[0])
 				i++
-			}
-			if s[i-1] < '0' || s[i-1] > '9' && s[i-1] < 'A' || s[i-1] > 'Z' && s[i-1] < 'a' || s[i-1] > 'z' {
-				if s[i] >= 'a' && s[i] <= 'z' {
-					r += string(s[i] - 32)
-				} else {
-					r += string(s[i])
-				}
-				i++
 			} else {
-				if s[i] >= 'A' && s[i] <= 'Z' {
-					r += string(s[i] + 32)
+				if s[i-1] < '0' || s[i-1] > '9' && s[i-1] < 'A' || s[i-1] > 'Z' && s[i-1] < 'a' || s[i-1] > 'z' {
+					if s[i] >= 'a' && s[i] <= 'z' {
+						r += string(s[i] - 32)
+					} else {
+						r += string(s[i])
+					}
+					i++
 				} else {
-					r += string(s[i])
+					if s[i] >= 'A' && s[i] <= 'Z' {
+						r += string(s[i] + 32)
+					} else {
+						r += string(s[i])
+					}
+					i++
 				}
-				i++
 			}
 		}
 	}
