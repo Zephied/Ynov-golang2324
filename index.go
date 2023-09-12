@@ -4,7 +4,7 @@ func Index(s string, toFind string) int {
 	i := 0
 	j := 0
 	y := len([]rune(toFind))
-	if len(s) < 1 && len(toFind) < 1 {
+	if len(s) < 1 || len(toFind) < 1 {
 		return (-1)
 	}
 	for range s {
