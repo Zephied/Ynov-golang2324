@@ -11,6 +11,9 @@ func IterativeFactorial(nb int) int {
 	for nb > 0 {
 		n = n * nb
 		nb--
+		if n > 2147483647 {
+			return (0)
+		}
 	}
 	return (n)
 }
