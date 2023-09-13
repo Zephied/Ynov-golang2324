@@ -6,6 +6,7 @@ import (
 )
 
 func main() {
-	arg1 := 7
-	fmt.Println(piscine.Fibonacci(arg1))
+	n := 0
+	piscine.PointOne(&n)
+	fmt.Println(n)
 }
