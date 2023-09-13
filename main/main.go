@@ -6,12 +6,13 @@ import (
 )
 
 func main() {
-	fmt.Println(piscine.Sqrt(4))
-	fmt.Println(piscine.Sqrt(9))
-	fmt.Println(piscine.Sqrt(-9))
-	fmt.Println(piscine.Sqrt(12))
-	fmt.Println(piscine.Sqrt(16))
-	fmt.Println(piscine.Sqrt(980))
-	fmt.Println(piscine.Sqrt(18))
-	fmt.Println(piscine.Sqrt(-16))
+	fmt.Println(piscine.IsPrime(5))
+	fmt.Println(piscine.IsPrime(4))
+	fmt.Println(piscine.IsPrime(121))
+	fmt.Println(piscine.IsPrime(7521))
+	fmt.Println(piscine.IsPrime(135))
+	fmt.Println(piscine.IsPrime(140))
+	fmt.Println(piscine.IsPrime(17))
+	fmt.Println(piscine.IsPrime(11))
+
 }
