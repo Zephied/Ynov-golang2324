@@ -14,5 +14,4 @@ func main() {
 	fmt.Println(piscine.IsPrime(140))
 	fmt.Println(piscine.IsPrime(17))
 	fmt.Println(piscine.IsPrime(11))
-
 }
