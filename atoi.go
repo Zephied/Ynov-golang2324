@@ -13,6 +13,9 @@ func Atoi(s string) int {
 	}
 	signe = 1
 	for _, va := range s {
+		if va != '+' || va != '-' || va < '0' || va > '9' {
+			return (0)
+		}
 		if va >= '0' && va <= '9' {
 			val = val*10 + int(va-'0')
 		} else if val == 0 && va == '-' {
@@ -20,7 +23,7 @@ func Atoi(s string) int {
 		} else if val == 0 && va == '+' {
 			signe = 1
 		} else if val != 0 {
-			return 0
+			return (0)
 		}
 	}
 	return val * signe
