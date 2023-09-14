@@ -7,7 +7,7 @@ func StrRev(s string) string {
 		i++
 	}
 	i--
-	for i > 0 {
+	for i >= 0 {
 		r += string(s[i])
 		i--
 	}
