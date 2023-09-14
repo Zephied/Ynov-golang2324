@@ -10,6 +10,9 @@ func Atoi(s string) int {
 		if signe > 1 {
 			return 0
 		}
+		if va >= 'a' && va <= 'z' || va >= 'A' && va <= 'Z' {
+			return (0)
+		}
 	}
 	signe = 1
 	for _, va := range s {
