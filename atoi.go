@@ -10,19 +10,16 @@ func Atoi(s string) int {
 		if signe > 1 {
 			return 0
 		}
-		if va >= '0' && va <= '9' {
-			break
-		}
 	}
 	signe = 1
 	for _, va := range s {
 		if va >= '0' && va <= '9' {
 			val = val*10 + int(va-'0')
-		} else if va == '-' {
+		} else if val == 0 && va == '-' {
 			signe = -1
-		} else if va == '+' {
+		} else if val == 0 && va == '+' {
 			signe = 1
-		} else {
+		} else if val != 0 {
 			return 0
 		}
 	}
