@@ -11,5 +11,6 @@ func main() {
 	prog := os.Args[0]
 	for range prog {
 		z01.PrintRune(rune(prog[i]))
+		i++
 	}
 }
