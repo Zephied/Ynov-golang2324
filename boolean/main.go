@@ -29,7 +29,7 @@ func main() {
 	for range os.Args {
 		i++
 	}
-	if i > 2 {
+	if i%2 == 1 {
 		lengthOfArg = 1
 	}
 	if isEven(lengthOfArg) == true {
