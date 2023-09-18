@@ -7,11 +7,7 @@ import (
 )
 
 func main() {
-	i := 2
-	prog := os.Args[0]
-	for i < len(prog) {
-		z01.PrintRune(rune(prog[i]))
-		i++
+	for _, v := range os.Args[0][2:] + "\n" {
+		z01.PrintRune(v)
 	}
-	z01.PrintRune('\n')
 }
