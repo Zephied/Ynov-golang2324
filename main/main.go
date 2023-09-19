@@ -3,7 +3,6 @@ package main
 import "piscine"
 
 func main() {
-	piscine.PrintCombN(1)
-	piscine.PrintCombN(3)
-	piscine.PrintCombN(9)
+	a := []int{1, 2, 3, 4, 5, 6}
+	piscine.ForEach(piscine.PrintNbr, a)
 }
