@@ -1,5 +1,6 @@
 package piscine
 
+/*
 func SplitWhiteSpaces(s string) []string {
 	tab := make([]string, 0)
 	i := 0
@@ -22,7 +23,7 @@ func SplitWhiteSpaces(s string) []string {
 	}
 	return tab
 }
-
+*/
 /*
 s[0:5]
 */
@@ -42,3 +43,19 @@ func SplitWhiteSpaces(s string) []string {
 	return slr
 }
 */
+func SplitWhiteSpaces(s string) []string {
+	start := 0
+	slr := []string{}
+	for i, v := range s {
+		if v == ' ' {
+			if !(s[i] == ' ' && s[start] == ' ') {
+				slr = append(slr, s[start:i])
+			}
+			start = i + 1
+		}
+	}
+	if s[start:] != "" {
+		slr = append(slr, s[start:])
+	}
+	return slr
+}
