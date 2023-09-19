@@ -1,11 +1,7 @@
 package main
 
-import (
-	"fmt"
-	"piscine"
-)
+import "piscine"
 
 func main() {
-	s := "HelloHAhowHAareHAyou?"
-	fmt.Printf("%#v\n", piscine.Split(s, "HA"))
+	piscine.PrintComb2()
 }

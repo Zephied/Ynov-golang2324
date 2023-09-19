@@ -9,11 +9,11 @@ func PrintComb2() {
 				for l := 0; l < 10; l++ {
 
 					if i*10+j < k*10+l {
-						z01.PrintRune(rune(i))
-						z01.PrintRune(rune(j))
+						z01.PrintRune(rune(i) + '0')
+						z01.PrintRune(rune(j) + '0')
 						z01.PrintRune(' ')
-						z01.PrintRune(rune(k))
-						z01.PrintRune(rune(l))
+						z01.PrintRune(rune(k) + '0')
+						z01.PrintRune(rune(l) + '0')
 						if i != 9 || j != 8 || k != 9 || l != 9 {
 							z01.PrintRune(',')
 							z01.PrintRune(' ')
