@@ -6,7 +6,7 @@ func SplitWhiteSpaces(s string) []string {
 	for range s {
 		j := i
 		if s[i] != ' ' && s[i] != '	' && s[i] != '\n' {
-			for s[j] != ' ' && s[j] != '	' && s[j] != '\n' && j != len(s)-1 {
+			for s[j] != ' ' && s[j] != '	' && s[j] != '\n' && j < len(s) {
 				j++
 			}
 			if i != j {
