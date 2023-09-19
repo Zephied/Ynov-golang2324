@@ -8,7 +8,7 @@ func Split(s, sep string) []string {
 	start := 0
 	for i := 0; i < len(s); i++ {
 		if s[i] == sep[0] {
-			if i != start && s[i:start] != "" {
+			if i != start && s[start:i] != "" {
 				slr = append(slr, s[start:i])
 			}
 			start = i + len(sep)
