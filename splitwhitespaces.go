@@ -9,7 +9,9 @@ func SplitWhiteSpaces(s string) []string {
 			for s[j] != ' ' && s[j] != '	' && s[j] != '\n' && j != len(s)-1 {
 				j++
 			}
-			tab = append(tab, s[i:j])
+			if i != j {
+				tab = append(tab, s[i:j])
+			}
 			i = j
 			for s[i] == ' ' || s[i] == '	' || s[i] == '\n' || i == len(s) {
 				i++
