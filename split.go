@@ -7,7 +7,7 @@ func Split(s, sep string) []string {
 	var slr []string
 	start := 0
 	for i := 0; i < len(s); i++ {
-		if s[i] == sep[0] {
+		if s[i] == sep[0] && i+len(sep) <= len(s) && s[i:i+len(sep)] == sep {
 			if i != start && s[start:i] != "" {
 				slr = append(slr, s[start:i])
 			}
