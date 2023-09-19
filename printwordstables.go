@@ -7,9 +7,7 @@ func PrintWordsTables(a []string) {
 	i := 0
 	for range a {
 		r += string(a[i])
-		if i != len(a)-1 {
-			r += "\n"
-		}
+		r += "\n"
 		i++
 	}
 	i = 0
