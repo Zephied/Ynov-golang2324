@@ -1,4 +1,4 @@
-/*package piscine
+package piscine
 
 func SplitWhiteSpaces(s string) []string {
 	tab := make([]string, 0)
@@ -9,7 +9,7 @@ func SplitWhiteSpaces(s string) []string {
 			for s[j] != ' ' && s[j] != '	' && s[j] != '\n' && j < len(s)-1 {
 				j++
 			}
-			if i != j {
+			if i != j && s[i:j] != "" {
 				tab = append(tab, s[i:j])
 			}
 			i = j
@@ -22,14 +22,11 @@ func SplitWhiteSpaces(s string) []string {
 	}
 	return tab
 }
-*/
 
 /*
-	s[0:5]
+s[0:5]
 */
-
-package piscine
-
+/*
 func SplitWhiteSpaces(s string) []string {
 	start := 0
 	slr := []string{}
@@ -44,3 +41,4 @@ func SplitWhiteSpaces(s string) []string {
 	slr = append(slr, s[start:])
 	return slr
 }
+*/
