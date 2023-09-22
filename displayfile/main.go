@@ -17,7 +17,7 @@ func main() {
 			return
 		}
 		if len(os.Args) == 2 {
-			fmt.Printf(string(file))
+			fmt.Printf("%s", string(file))
 		}
 	}
 }
