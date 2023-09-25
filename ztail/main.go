@@ -26,6 +26,9 @@ func main() {
 				fmt.Printf("err")
 			}
 			j = val
+			if val > len(count) {
+				j = len(count)
+			}
 			tail = string(count[len(count)-j:])
 			fmt.Printf("%s %s %s \n", start, name, end)
 			fmt.Printf("%s", tail)
