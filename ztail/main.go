@@ -11,7 +11,7 @@ func main() {
 	start := "==>"
 	end := "<=="
 	var j int
-	if os.Args[1] == "-c" && os.Args[2] >= "0" && os.Args[2] <= "2000" {
+	if os.Args[1] == "-c" && os.Args[2] >= "0" && os.Args[2] <= "2345" {
 		val := 0
 		for _, va := range os.Args[2] {
 			if va >= '0' && va <= '9' {
