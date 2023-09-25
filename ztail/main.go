@@ -6,7 +6,6 @@ import (
 )
 
 func main() {
-
 	i := 3
 	var name string
 	start := "==>"
