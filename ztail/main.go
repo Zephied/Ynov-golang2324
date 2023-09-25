@@ -23,7 +23,7 @@ func main() {
 			count, err := os.ReadFile(os.Args[i])
 			name = os.Args[i]
 			if err != nil {
-				fmt.Printf("open %s: no such file or directory\n", name)
+				fmt.Printf("open %s: no such file or directory\n\n", name)
 			} else {
 				j = val
 				if val > len(count) {
