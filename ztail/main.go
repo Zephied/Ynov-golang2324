@@ -12,6 +12,7 @@ func main() {
 	end := "<=="
 	var j int
 	error := false
+	typ := false
 	if os.Args[1] == "-c" && os.Args[2] >= "0" && os.Args[2] <= "2345" {
 		val := 0
 		for _, va := range os.Args[2] {
@@ -26,8 +27,11 @@ func main() {
 			if err != nil {
 				fmt.Printf("open %s: no such file or directory\n", name)
 				error = true
-				fmt.Printf("\n")
+				typ = true
 			} else {
+				if typ {
+					fmt.Printf("\n")
+				}
 				j = val
 				if val > len(count) {
 					j = len(count)
