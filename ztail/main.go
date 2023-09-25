@@ -25,7 +25,6 @@ func main() {
 			if err != nil {
 				fmt.Printf("err")
 			}
-			fmt.Printf("%s", count)
 			j = val
 			tail = string(count[len(count)-j:])
 			fmt.Printf("%s %s %s \n", start, name, end)
