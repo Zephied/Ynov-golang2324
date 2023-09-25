@@ -24,7 +24,7 @@ func main() {
 			count, err := os.ReadFile(os.Args[i])
 			name = os.Args[i]
 			if err != nil {
-				fmt.Printf("open %s: no such file or directory\n\n", name)
+				fmt.Printf("open %s: no such file or directory\n", name)
 				error = true
 			} else {
 				j = val
@@ -32,7 +32,7 @@ func main() {
 					j = len(count)
 				}
 				tail = string(count[len(count)-j:])
-				fmt.Printf("%s %s %s\n", start, name, end)
+				fmt.Printf("\n%s %s %s\n", start, name, end)
 				fmt.Printf("%s", tail)
 			}
 			i++
