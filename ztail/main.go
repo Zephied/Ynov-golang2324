@@ -32,7 +32,10 @@ func main() {
 					j = len(count)
 				}
 				tail = string(count[len(count)-j:])
-				fmt.Printf("\n%s %s %s\n", start, name, end)
+				if i > 3 {
+					fmt.Printf("\n")
+				}
+				fmt.Printf("%s %s %s\n", start, name, end)
 				fmt.Printf("%s", tail)
 			}
 			i++
