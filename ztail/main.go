@@ -27,10 +27,10 @@ func main() {
 			if err != nil {
 				fmt.Printf("open %s: no such file or directory\n", name)
 				error = true
+				typ = true
 			} else {
-				if !typ {
+				if typ {
 					fmt.Printf("\n")
-					typ = true
 				}
 				j = val
 				if val > len(count) {
