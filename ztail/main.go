@@ -26,6 +26,7 @@ func main() {
 			if err != nil {
 				fmt.Printf("open %s: no such file or directory\n", name)
 				error = true
+				fmt.Printf("\n")
 			} else {
 				j = val
 				if val > len(count) {
