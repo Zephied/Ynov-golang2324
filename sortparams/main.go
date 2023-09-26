@@ -1,15 +1,19 @@
 package main
 
 import (
-	"fmt"
 	"os"
 	"sort"
+
+	"github.com/01-edu/z01"
 )
 
 func main() {
 	args := os.Args[1:]
 	sort.Strings(args)
 	for _, arg := range args {
-		fmt.Println(arg)
+		for _, c := range arg {
+			z01.PrintRune(c)
+		}
+		z01.PrintRune('\n')
 	}
 }
