@@ -52,6 +52,10 @@ func main() {
 	for i := 3; i < len(os.Args); i++ {
 		file, err := os.ReadFile(os.Args[i])
 		name := os.Args[i]
+		if convertInt > len(file) {
+			convertInt = len(file)
+			error = true
+		}
 		if err != nil {
 			fmt.Printf("open %s: no such file or directory\n", name)
 			error = true
