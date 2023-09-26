@@ -5,7 +5,7 @@ import (
 	"os"
 )
 
-func main() {
+/*func main() {
 	i := 3
 	var name string
 	start := "==>"
@@ -41,4 +41,55 @@ func main() {
 			os.Exit(1)
 		}
 	}
+}*/
+
+func main() {
+	CheckInput()
+	start := "==>"
+	end := "<=="
+	error := false
+	convertInt := BasicAtoi(os.Args[2])
+	for i := 3; i < len(os.Args); i++ {
+		file, err := os.ReadFile(os.Args[i])
+		name := os.Args[i]
+		if err != nil {
+			fmt.Printf("open %s: no such file or directory\n", name)
+			error = true
+		} else {
+			if i > 3 {
+				fmt.Printf("\n")
+			}
+			fmt.Printf("%s %s %s\n", start, name, end)
+			fmt.Printf("%s\n", file[len(file)-convertInt:])
+		}
+	}
+	if error {
+		os.Exit(1)
+	}
+}
+
+func CheckInput() {
+	convertInt := BasicAtoi(os.Args[2])
+	if len(os.Args) < 4 {
+		fmt.Printf("Usage: ztail [-c N] <file1> <file2> ...\n")
+		os.Exit(1)
+	}
+	if os.Args[1] != "-c" {
+		fmt.Printf("Usage: ztail [-c N] <file1> <file2> ...\n")
+		os.Exit(1)
+	}
+	if convertInt < 0 || convertInt > 2000 {
+		fmt.Printf("Usage: ztail [-c N] <file1> <file2> ...\n")
+		os.Exit(1)
+	}
+}
+
+func BasicAtoi(s string) int {
+	var result int
+	for _, v := range s {
+		if v >= '0' && v <= '9' {
+			result = result*10 + int(v-'0')
+		}
+	}
+	return result
 }
