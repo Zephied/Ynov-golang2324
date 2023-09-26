@@ -45,10 +45,10 @@ import (
 
 func main() {
 	CheckInput()
-	//start := "==>"
-	//end := "<=="
-	//error := false
-	//convertInt := BasicAtoi(os.Args[2])
+	// start := "==>"
+	// end := "<=="
+	// error := false
+	// convertInt := BasicAtoi(os.Args[2])
 	for i := 3; i < len(os.Args); i++ {
 		ReadFile(os.Args[i], os.Args[2])
 		/*if convertInt > len(file) {
@@ -103,7 +103,7 @@ func ReadFile(file string, nbr string) {
 		fmt.Printf("open %s: no such file or directory\n\n", file)
 	} else {
 		fileRead, _ := os.ReadFile(file)
-		fmt.Printf("%s %s %s\n", "==>", file, "<==")
+		fmt.Printf("==> %s <==\n", file)
 		fmt.Printf("%s\n", fileRead[len(fileRead)-BasicAtoi(nbr):])
 	}
 }
