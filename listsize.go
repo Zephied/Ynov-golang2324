@@ -11,7 +11,7 @@ type List struct {
 }
 
 func ListSize(l *List) int {
-	n := 0
+	n := 1
 	for l.Head.Next != nil {
 		n++
 		l.Head = l.Head.Next
