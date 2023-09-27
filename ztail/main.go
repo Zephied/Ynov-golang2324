@@ -6,48 +6,18 @@ import (
 )
 
 func main() {
-	error := false
-	if len(os.Args) < 3 {
-		usage()
-	}
-
-	convertInt := BasicAtoi(os.Args[2])
-	if convertInt <= 0 || convertInt > 2000 {
-		usage()
-	}
-
-	if os.Args[1] != "-c" {
-		fmt.Printf("Usage: ztail [-c N] <file1> <file2> ...\n")
-		usage()
-	}
-
-	for i := 3; i < len(os.Args); i++ {
-		if i > 3 {
-			fmt.Printf("\n")
+	readError := false
+	var errorr bool
+	if VerifInputs() {
+		nbr := BasicAtoi(os.Args[2])
+		// fmt.Println(nbr)
+		for i := 3; i < len(os.Args); i++ {
+			errorr = ReadLetters(nbr, os.Args[i], &readError)
 		}
-		fmt.Printf("==> %s <==\n", os.Args[i])
-		data, err := ReadFile(os.Args[i])
-		if err != nil {
-			fmt.Printf("open %s: no such file or directory\n", os.Args[i])
-			error = true
-			continue
+		if errorr {
+			os.Exit(1)
 		}
-		if convertInt < len(data) {
-			convertInt = len(data)
-		}
-		if len(data) > convertInt {
-			data = data[len(data)-convertInt:]
-		}
-		fmt.Printf("%s", data)
 	}
-	if error {
-		os.Exit(1)
-	}
-}
-
-func usage() {
-	fmt.Printf("Usage: ztail [-c N] <file1> <file2> ...\n")
-	os.Exit(1)
 }
 
 func BasicAtoi(s string) int {
@@ -60,23 +30,49 @@ func BasicAtoi(s string) int {
 	return result
 }
 
-func ReadFile(filename string) ([]byte, error) {
-	file, err := os.Open(filename)
+func ReadFile(filename string) []byte {
+	var file []byte
+	var err error
+	file, err = os.ReadFile(filename)
 	if err != nil {
-		return nil, err
+		return nil
+	} else {
+		return file
 	}
-	defer file.Close()
+}
 
-	stat, err := file.Stat()
-	if err != nil {
-		return nil, err
+func VerifInputs() bool {
+	if len(os.Args) < 4 {
+		return false
 	}
-
-	data := make([]byte, stat.Size())
-	_, err = file.Read(data)
-	if err != nil {
-		return nil, err
+	if os.Args[1] != "-c" {
+		return false
 	}
+	if BasicAtoi(os.Args[2]) < 0 {
+		return false
+	}
+	return true
+}
 
-	return data, nil
+func ReadLetters(nbr int, path string, readError *bool) bool {
+	var errorr bool
+	file := ReadFile(path)
+	// fmt.Println(string(file))
+	if file == nil {
+		fmt.Printf("open %s: no such file or directory\n", path)
+		*readError = true
+	} else {
+		if *readError {
+			fmt.Printf("\n")
+			*readError = false
+			errorr = true
+		}
+		fmt.Printf("==> %s <==\n", path)
+		if nbr > len(file) {
+			fmt.Printf("%s", file)
+		} else {
+			fmt.Printf("%s", file[len(file)-nbr:])
+		}
+	}
+	return errorr
 }
