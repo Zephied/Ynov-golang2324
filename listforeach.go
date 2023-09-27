@@ -5,11 +5,6 @@ type NodeL struct {
 	Next *NodeL
 }
 
-type List struct {
-	Head *NodeL
-	Tail *NodeL
-}
-
 func ListForEach(l *List, f func(*NodeL)) {
 	p := l.Head
 	for p != nil {
