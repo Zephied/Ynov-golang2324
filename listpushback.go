@@ -2,10 +2,10 @@ package piscine
 
 func ListPushBack(l *List, data interface{}) {
 	n := &NodeL{Data: data}
-	if l.Tail == nil {
-		l.Tail = n
+	if l.Head == nil {
+		l.Head = n
 	} else {
-		l.Head.Next = n
+		l.Tail.Next = n
 	}
-	l.Head = n
+	l.Tail = n
 }
