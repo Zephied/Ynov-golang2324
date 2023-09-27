@@ -66,6 +66,7 @@ func ReadLetters(nbr int, path string, readError *bool) bool {
 		if *readError {
 			fmt.Printf("\n")
 			*readError = false
+			errorr = true
 		}
 		fmt.Printf("==> %s <==\n", path)
 		if nbr > len(file) {
