@@ -16,4 +16,5 @@ func ListAt(l *NodeL, pos int) *NodeL {
 			l = l.Next
 		}
 	}
+	return l
 }
