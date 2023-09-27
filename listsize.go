@@ -12,9 +12,9 @@ type List struct {
 
 func ListSize(l *List) int {
 	n := 0
-	for l.Head.Next != nil {
+	for l.Head != nil {
 		n++
 		l.Head = l.Head.Next
 	}
-	return n + 1
+	return n
 }
