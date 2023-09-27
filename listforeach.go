@@ -1,10 +1,5 @@
 package piscine
 
-type NodeL struct {
-	Data interface{}
-	Next *NodeL
-}
-
 func ListForEach(l *List, f func(*NodeL)) {
 	p := l.Head
 	for p != nil {
