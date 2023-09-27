@@ -16,6 +16,5 @@ func ListSize(l *List) int {
 		n++
 		l.Head = l.Head.Next
 	}
-	n++
-	return n
+	return n + 1
 }
