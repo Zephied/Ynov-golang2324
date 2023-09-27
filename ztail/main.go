@@ -61,11 +61,11 @@ func ReadLetters(nbr int, path string, readError *bool) bool {
 	if file == nil {
 		fmt.Printf("open %s: no such file or directory\n", path)
 		*readError = true
+		errorr = true
 	} else {
 		if *readError {
 			fmt.Printf("\n")
 			*readError = false
-			errorr = true
 		}
 		fmt.Printf("==> %s <==\n", path)
 		if nbr > len(file) {
