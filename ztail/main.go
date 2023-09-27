@@ -6,6 +6,7 @@ import (
 )
 
 func main() {
+	error := false
 	if len(os.Args) < 3 {
 		usage()
 	}
@@ -28,12 +29,16 @@ func main() {
 		data, err := ReadFile(os.Args[i])
 		if err != nil {
 			fmt.Printf("Error reading file %s: %v\n", os.Args[i], err)
+			error := true
 			continue
 		}
 		if len(data) > convertInt {
 			data = data[len(data)-convertInt:]
 		}
 		fmt.Printf("%s", data)
+	}
+	if error {
+		os.Exit(1)
 	}
 }
 
