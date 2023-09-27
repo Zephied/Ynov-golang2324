@@ -35,7 +35,7 @@ func main() {
 		if len(data) > convertInt {
 			data = data[len(data)-convertInt:]
 		}
-		fmt.Printf("%s\n", data)
+		fmt.Printf("%s", data)
 	}
 	if error {
 		os.Exit(1)
