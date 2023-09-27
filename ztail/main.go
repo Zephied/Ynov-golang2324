@@ -28,14 +28,14 @@ func main() {
 		fmt.Printf("==> %s <==\n", os.Args[i])
 		data, err := ReadFile(os.Args[i])
 		if err != nil {
-			fmt.Printf("Error reading file %s: %v\n", os.Args[i], err)
+			fmt.Printf("open %s: no such file or directory\n", os.Args[i])
 			error = true
 			continue
 		}
 		if len(data) > convertInt {
 			data = data[len(data)-convertInt:]
 		}
-		fmt.Printf("%s", data)
+		fmt.Printf("%s\n", data)
 	}
 	if error {
 		os.Exit(1)
