@@ -32,6 +32,9 @@ func main() {
 			error = true
 			continue
 		}
+		if convertInt < len(data) {
+			convertInt = len(data)
+		}
 		if len(data) > convertInt {
 			data = data[len(data)-convertInt:]
 		}
