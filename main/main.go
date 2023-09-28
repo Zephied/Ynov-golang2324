@@ -9,12 +9,11 @@ func main() {
 	link := &piscine.List{}
 
 	piscine.ListPushBack(link, "hello")
-	piscine.ListPushBack(link, "hello1")
-	piscine.ListPushBack(link, "hello2")
-	piscine.ListPushBack(link, "hello3")
+	piscine.ListPushBack(link, "how are")
+	piscine.ListPushBack(link, "you")
+	piscine.ListPushBack(link, 1)
 
-	found := piscine.ListFind(link, interface{}("hello2"), piscine.CompStr)
-
-	fmt.Println(found)
-	fmt.Println(*found)
+	fmt.Println(piscine.ListAt(link.Head, 3).Data)
+	fmt.Println(piscine.ListAt(link.Head, 1).Data)
+	fmt.Println(piscine.ListAt(link.Head, 7))
 }
