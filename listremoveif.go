@@ -1,10 +1,5 @@
 package piscine
 
-type List struct {
-	Head *NodeL
-	Tail *NodeL
-}
-
 func ListRemoveIf(l *List, data_ref interface{}) {
 	if l.Head == nil {
 		return
